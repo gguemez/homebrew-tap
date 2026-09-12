@@ -1,18 +1,38 @@
-# Gguemez Tap
+# gguemez/tap
 
-## How do I install these formulae?
+Homebrew casks for my own apps.
 
-`brew install gguemez/tap/<formula>`
+## Trackpad Companion
 
-Or `brew tap gguemez/tap` and then `brew install <formula>`.
+Precision Touchpad gestures for macOS — a userspace bridge from a PTP HID
+device to native macOS gesture events.
 
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "gguemez/tap"
-brew "<formula>"
+```
+brew tap gguemez/tap
+brew install --cask trackpad-companion
 ```
 
-## Documentation
+Source and issues:
+<https://github.com/gguemez/macos-trackpad-companion>
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+### Uninstalling
+
+```
+brew uninstall --cask trackpad-companion
+```
+
+This stops the LaunchAgent *before* removing the bundle, which matters: a
+Precision Touchpad on the spec Input Mode path goes dormant the moment
+nothing is driving it, and macOS may be configured to ignore the built-in
+trackpad while an external pointing device is attached. Removing the app
+from under a running daemon can leave the machine with no pointer at all.
+
+Add `--zap` to also remove the config file, the log, and any staged
+updates.
+
+## Notes
+
+The cask's `version` and `sha256` are written by the app's own
+`scripts/publish.sh`, from the same artifact it uploads — never by hand.
+A cask edited manually is one that drifts behind the release it claims
+to install.
