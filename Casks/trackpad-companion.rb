@@ -1,8 +1,8 @@
 cask "trackpad-companion" do
   version "0.9.3"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "bf7e340bdf5564001e8127729eecd4940316e1da56956d6afa7c60aa1e48ba4b"
 
-  url "https://dl.trackpad-companion.guemez.net/Trackpad-Companion-#{version}.dmg"
+  url "https://dl.bridge.guemez.net/Trackpad-Companion-#{version}.dmg"
   name "Trackpad Companion"
   desc "Bridges Precision Touchpad devices to native gesture events"
   homepage "https://github.com/gguemez/macos-trackpad-companion"
@@ -10,7 +10,7 @@ cask "trackpad-companion" do
   # The same feed the app itself checks, so the cask can never advertise
   # a version that was never published.
   livecheck do
-    url "https://dl.trackpad-companion.guemez.net/appcast.json"
+    url "https://dl.bridge.guemez.net/appcast.json"
     strategy :json do |json|
       json["version"]
     end
