@@ -1,6 +1,6 @@
 cask "trackpad-companion" do
-  version "0.9.3"
-  sha256 "bf7e340bdf5564001e8127729eecd4940316e1da56956d6afa7c60aa1e48ba4b"
+  version "0.9.4"
+  sha256 "ca42e7fc0ef0de08488176d231d2250d3eb0dd64f8803a8f68d881e784c6abea"
 
   url "https://dl.bridge.guemez.net/Trackpad-Companion-#{version}.dmg"
   name "Trackpad Companion"
